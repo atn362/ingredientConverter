@@ -12,6 +12,12 @@
     <hr>
     <button (click)="handleIngredientsSelection()">Convert</button>
     <button (click)="clearInput()">Clear</button>
-    <p *ngIf="result">{{result}}</p>
+    <p *ngIf="result">{{result}} Grams</p>
   </div>
 </div>
+
+<input type="text" [(ngModel)]="newItem">
+<button (click)="addItem()">Add Item</button>
+<ul>
+  <li *ngFor="let item of itemList">{{ item }}</li>
+</ul>

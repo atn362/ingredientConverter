@@ -16,6 +16,17 @@ export class MeasurementsComponent {
   selectedPortion!: Portion;
   portions: string[] = Object.values(Portion);
   ingredients: string[] = Object.values(Ingredients);
+  recipeList: string[] = [];
+
+    itemList: string[] = [];
+  newItem: string = '';
+
+  addItem() {
+    if (this.newItem.trim() !== '') {
+      this.itemList.push(this.newItem);
+      this.newItem = '';
+    }
+  }
 
   handleIngredientsSelection(): void {
     switch(this.selectedIngredients){
