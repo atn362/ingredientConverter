@@ -1,0 +1,8 @@
+<p>image-search works!</p>
+
+<label for="searchInput">Enter a search term:</label>
+<input type="text" id="searchInput" [(ngModel)]="searchTerm">
+<button (click)="searchImage()">Search</button>
+<div *ngIf="imageURL">
+  <img [src]="imageURL" alt="Search Result">
+</div>

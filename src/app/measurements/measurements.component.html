@@ -1,0 +1,17 @@
+<div id="mainContainer">
+  <div>
+    <h4>Convert Cups to Grams</h4>
+    <h6>Select Ingredient</h6>
+    <select [(ngModel)]="selectedIngredients">
+      <option *ngFor="let ingredient of ingredients" [value]="ingredient">{{ingredient}}</option>
+    </select>
+    <h6>Select Measurement</h6>
+    <select [(ngModel)]="selectedPortion" (change)="hanglePortionSize()">
+      <option *ngFor="let portion of portions" [value]="portion">{{portion}}</option>
+    </select>
+    <hr>
+    <button (click)="handleIngredientsSelection()">Convert</button>
+    <button (click)="clearInput()">Clear</button>
+    <p *ngIf="result">{{result}}</p>
+  </div>
+</div>
