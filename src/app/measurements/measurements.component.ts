@@ -70,7 +70,9 @@ export class MeasurementsComponent {
       case Ingredients.YOGURT:
         this.result = Math.floor(this.input * 245);
         break;
-        console.log('Result', this.result)
+      case Ingredients.WATERMILK:
+        this.result = Math.floor(this.input * 236);
+        break;
       default:
         console.log('Unknown Selection');
         break;
