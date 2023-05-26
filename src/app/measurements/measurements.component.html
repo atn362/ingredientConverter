@@ -16,8 +16,17 @@
   </div>
 </div>
 
-<input type="text" [(ngModel)]="newItem">
-<button (click)="addItem()">Add Item</button>
-<ul>
-  <li *ngFor="let item of itemList">{{ item }}</li>
-</ul>
+<div>
+  <input type="text" [(ngModel)]="newTitle">
+  <button [disabled]="disableTitleAdd" (click)="addTitle()">Add Title</button>
+
+</div>
+
+<div>
+  <input type="text" [(ngModel)]="newItem">
+  <button (click)="addItem()">Add Item</button>
+  <h2 *ngFor="let title of titleList">{{ title }}</h2>
+  <ul>
+    <li *ngFor="let item of itemList">{{ item }}</li>
+  </ul>
+</div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Ingredients } from '../enums/ingredients';
 import { Portion } from '../enums/portion';
 
@@ -7,7 +7,7 @@ import { Portion } from '../enums/portion';
   templateUrl: './measurements.component.html',
   styleUrls: ['./measurements.component.css']
 })
-export class MeasurementsComponent {
+export class MeasurementsComponent implements OnInit {
 
   input!: number;
   result!: number;
@@ -18,13 +18,32 @@ export class MeasurementsComponent {
   ingredients: string[] = Object.values(Ingredients);
   recipeList: string[] = [];
 
-    itemList: string[] = [];
+  itemList: string[] = [];
   newItem: string = '';
+  newTitle: string = '';
+  titleList: string[] = [];
+  disableTitleAdd: boolean = false;
+
+  ngOnInit(): void {
+  }
 
   addItem() {
     if (this.newItem.trim() !== '') {
       this.itemList.push(this.newItem);
       this.newItem = '';
+    }
+  }
+
+
+
+
+  addTitle() {
+    if (this.newTitle.trim() !== '') {
+      this.titleList.push(this.newTitle);
+      this.newTitle = '';
+    }
+    if(this.titleList.length >= 1) {
+      this.disableTitleAdd = true;
     }
   }
 
