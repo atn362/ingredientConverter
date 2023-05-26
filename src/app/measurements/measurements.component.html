@@ -10,9 +10,9 @@
       <option *ngFor="let portion of portions" [value]="portion">{{portion}}</option>
     </select>
     <hr>
-    <button (click)="handleIngredientsSelection()">Convert</button>
+    <button (click)="handleIngredientsSelection(); addItem()">Convert</button>
     <button (click)="clearInput()">Clear</button>
-    <p *ngIf="result">{{result}} Grams</p>
+    <!-- <p *ngIf="result">{{result}} Grams</p> -->
   </div>
 </div>
 
@@ -22,11 +22,16 @@
 
 </div>
 
-<div>
+<!-- <div>
   <input type="text" [(ngModel)]="newItem">
   <button (click)="addItem()">Add Item</button>
+</div> -->
+
+<div id="printableDiv">
   <h2 *ngFor="let title of titleList">{{ title }}</h2>
+  <h4 *ngIf="result">Ingredients</h4>
   <ul>
     <li *ngFor="let item of itemList">{{ item }}</li>
   </ul>
 </div>
+<button (click)="printDiv()">Print</button>

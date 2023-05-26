@@ -7,7 +7,7 @@ import { Portion } from '../enums/portion';
   templateUrl: './measurements.component.html',
   styleUrls: ['./measurements.component.css']
 })
-export class MeasurementsComponent implements OnInit {
+export class MeasurementsComponent {
 
   input!: number;
   result!: number;
@@ -24,12 +24,9 @@ export class MeasurementsComponent implements OnInit {
   titleList: string[] = [];
   disableTitleAdd: boolean = false;
 
-  ngOnInit(): void {
-  }
-
   addItem() {
     if (this.newItem.trim() !== '') {
-      this.itemList.push(this.newItem);
+      this.itemList.push(this.newItem + ' Grams ' + this.selectedIngredients);
       this.newItem = '';
     }
   }
@@ -78,6 +75,7 @@ export class MeasurementsComponent implements OnInit {
         console.log('Unknown Selection');
         break;
     }
+    this.newItem = this.result.toString();
   }
 
   hanglePortionSize(): void {
@@ -85,7 +83,7 @@ export class MeasurementsComponent implements OnInit {
       case Portion.QUARTERCUP:
         this.input = .25;
         break;
-      case Portion.ONETHIRDCUP:
+      case Portion.THRIDCUP:
         this.input = .334;
         break;
       case Portion.HALFCUP:
@@ -128,5 +126,15 @@ export class MeasurementsComponent implements OnInit {
     location.reload();
   }
 
+   printDiv() {
+    const printableElement = document.getElementById('printableDiv');
+    if (printableElement) {
+      const printContents = printableElement.innerHTML;
+      const originalContents = document.body.innerHTML;
+      document.body.innerHTML = printContents;
+      window.print();
+      document.body.innerHTML = originalContents;
+    }
+  }
 
 }
