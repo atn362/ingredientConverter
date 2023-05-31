@@ -8,20 +8,23 @@ import { FormsModule } from '@angular/forms';
 import { ImageSearchComponent } from './image-search/image-search.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
+import { SpoonMeasurmentsComponent } from './spoon-measurments/spoon-measurments.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MeasurementsComponent,
-    ImageSearchComponent
+    ImageSearchComponent,
+    SpoonMeasurmentsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    MatCardModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatCardModule
 
   ],
   providers: [],

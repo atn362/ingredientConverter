@@ -8,5 +8,8 @@ export enum Ingredients{
   BUTTER = 'Butter',
   YOGURT = 'Yorgurt',
   WATERMILK = 'Water or Milk',
+  BAKINGSODA = 'Baking Soda',
+  BAKINGPOWDER = 'Baking Soda',
+  SALT = 'Salt',
 
 }

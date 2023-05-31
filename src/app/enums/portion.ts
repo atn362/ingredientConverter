@@ -10,5 +10,7 @@ export enum Portion {
   ONEHALFCUP = '1 1/2 Cups',
   ONETWOTHIRDCUP = '1 2/3 Cups',
   ONETHREEQUARTERCUP = '1 3/4 Cups',
-  TWOCUPS = '2 Cups'
+  TWOCUPS = '2 Cups',
+  TEASPOON = '1 Tsp',
+  TABLESPOON = '1 Tblsp'
 }
