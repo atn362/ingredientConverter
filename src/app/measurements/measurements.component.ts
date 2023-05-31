@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Ingredients } from '../enums/ingredients';
 import { Portion } from '../enums/portion';
-import { MatCardModule } from '@angular/material/card';
-
 
 @Component({
   selector: 'app-measurements',
   templateUrl: './measurements.component.html',
   styleUrls: ['./measurements.component.css']
+
 })
 export class MeasurementsComponent {
 

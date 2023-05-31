@@ -4,6 +4,7 @@ import { MeasurementsComponent } from './measurements/measurements.component';
 import { AppComponent } from './app.component';
 import { ImageSearchComponent } from './image-search/image-search.component';
 
+
 const routes: Routes = [    { path: '', redirectTo: '/home', pathMatch: 'full' }, // Default route
 { path: 'measurement', component: MeasurementsComponent},
   {path: 'home', component: AppComponent},

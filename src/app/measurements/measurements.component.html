@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<div>
+<div id="titleInput">
   <input type="text" [(ngModel)]="newTitle">
   <button [disabled]="disableTitleAdd" (click)="addTitle()">Add Title</button>
 
@@ -34,4 +34,4 @@
     <li *ngFor="let item of itemList">{{ item }}</li>
   </ul>
 </div>
-<button (click)="printDiv()">Print</button>
+<button mat-button color="primary" (click)="printDiv()">Print</button>
