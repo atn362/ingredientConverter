@@ -129,14 +129,27 @@ export class MeasurementsComponent {
     location.reload();
   }
 
-   printDiv() {
+  printDiv() {
     const printableElement = document.getElementById('printableDiv');
     if (printableElement) {
       const printContents = printableElement.innerHTML;
-      const originalContents = document.body.innerHTML;
-      document.body.innerHTML = printContents;
-      window.print();
-      document.body.innerHTML = originalContents;
+      const popupWin = window.open('', '_blank', 'width=600,height=600');
+      if (popupWin) {
+        popupWin.document.open();
+        popupWin.document.write(`
+        <html>
+          <head>
+            <title>Print</title>
+          </head>
+          <body onload="window.print(); window.close();">
+            ${printContents}
+          </body>
+        </html>
+      `);
+        popupWin.document.close();
+      } else {
+        alert('Failed to open the print window.');
+      }
     }
   }
 
