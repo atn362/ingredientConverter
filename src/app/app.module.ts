@@ -7,6 +7,7 @@ import { MeasurementsComponent } from './measurements/measurements.component';
 import { FormsModule } from '@angular/forms';
 import { ImageSearchComponent } from './image-search/image-search.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule,
+    BrowserAnimationsModule
 
   ],
   providers: [],
