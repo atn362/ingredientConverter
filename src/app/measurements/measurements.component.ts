@@ -74,6 +74,12 @@ export class MeasurementsComponent {
       case Ingredients.WATERMILK:
         this.result = Math.floor(this.input * 236);
         break;
+      case Ingredients.CORNMEAL:
+        this.result = Math.floor(this.input * 160);
+        break;
+      case Ingredients.OIL:
+        this.result = Math.floor(this.input * 225);
+        break;
       default:
         console.log('Unknown Selection');
         break;
