@@ -11,5 +11,7 @@
     <li *ngFor="let item of recipeItems">{{ item }}</li>
   </ul>
 </div>
-<button mat-button color="primary" (click)="printDiv()">Print</button>
-<button (click)="clearInput()">Clear</button>
+<div id="buttonSection">
+  <button mat-button color="primary" (click)="printDiv()">Print</button>
+  <button (click)="clearInput()">Clear</button>
+</div>
