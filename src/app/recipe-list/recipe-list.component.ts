@@ -57,4 +57,8 @@ export class RecipeListComponent implements OnInit  {
     }
   }
 
+  clearInput(): void {
+    location.reload();
+  }
+
 }

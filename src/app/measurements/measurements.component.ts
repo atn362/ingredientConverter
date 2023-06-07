@@ -119,8 +119,6 @@ export class MeasurementsComponent {
     }
   }
 
-  clearInput(): void {
-    location.reload();
-  }
+
 
 }
