@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Ingredients } from '../enums/ingredients';
 import { Portion } from '../enums/portion';
+import { CreateRecipeService } from '../create-recipe.service';
 
 @Component({
   selector: 'app-measurements',
@@ -9,6 +10,7 @@ import { Portion } from '../enums/portion';
 
 })
 export class MeasurementsComponent {
+  constructor(private createRecipeService: CreateRecipeService){}
 
   input!: number;
   result!: number;
@@ -17,33 +19,19 @@ export class MeasurementsComponent {
   selectedPortion!: Portion;
   portions: string[] = Object.values(Portion);
   ingredients: string[] = Object.values(Ingredients);
-  recipeList: string[] = [];
 
   itemList: string[] = [];
   newItem: string = '';
-  newTitle: string = '';
-  titleList: string[] = [];
   disableTitleAdd: boolean = false;
 
   addItem() {
     if (this.newItem.trim() !== '') {
-      this.itemList.push(this.newItem + ' Grams ' + this.selectedIngredients);
+      this.createRecipeService.addItem(this.newItem + ' Grams ' + this.selectedIngredients);
       this.newItem = '';
     }
   }
 
 
-
-
-  addTitle() {
-    if (this.newTitle.trim() !== '') {
-      this.titleList.push(this.newTitle);
-      this.newTitle = '';
-    }
-    if(this.titleList.length >= 1) {
-      this.disableTitleAdd = true;
-    }
-  }
 
   handleIngredientsSelection(): void {
     switch(this.selectedIngredients){
@@ -133,30 +121,6 @@ export class MeasurementsComponent {
 
   clearInput(): void {
     location.reload();
-  }
-
-  printDiv() {
-    const printableElement = document.getElementById('printableDiv');
-    if (printableElement) {
-      const printContents = printableElement.innerHTML;
-      const popupWin = window.open('', '_blank', 'width=600,height=600');
-      if (popupWin) {
-        popupWin.document.open();
-        popupWin.document.write(`
-        <html>
-          <head>
-            <title>Print</title>
-          </head>
-          <body onload="window.print(); window.close();">
-            ${printContents}
-          </body>
-        </html>
-      `);
-        popupWin.document.close();
-      } else {
-        alert('Failed to open the print window.');
-      }
-    }
   }
 
 }

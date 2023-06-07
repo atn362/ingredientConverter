@@ -10,7 +10,7 @@
       <option *ngFor="let portion of portions" [value]="portion">{{portion}}</option>
     </select>
     <hr>
-    <button (click)="handleIngredientSelection()">Convert</button>
+    <button (click)="handleIngredientSelection(); addItem()">Convert</button>
     <p *ngIf="result">{{result}} Grams</p>
   </div>
 </div>

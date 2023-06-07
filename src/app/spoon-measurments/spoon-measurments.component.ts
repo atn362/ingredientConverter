@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { SpoonIngredients } from '../enums/spoonIngredients';
 import { SpoonMeasurements } from '../enums/spoonMeasurments';
+import { CreateRecipeService } from '../create-recipe.service';
+
 
 
 @Component({
@@ -9,6 +11,7 @@ import { SpoonMeasurements } from '../enums/spoonMeasurments';
   styleUrls: ['./spoon-measurments.component.css']
 })
 export class SpoonMeasurmentsComponent {
+   constructor(private createRecipeService: CreateRecipeService){}
 
   input!: number;
   result!: number;
@@ -17,6 +20,16 @@ export class SpoonMeasurmentsComponent {
   selectedPortion!: SpoonMeasurements;
   portions: string[] = Object.values(SpoonMeasurements);
   ingredients: string[] = Object.values(SpoonIngredients);
+
+    itemList: string[] = [];
+  newItem: string = '';
+
+   addItem() {
+    if (this.newItem.trim() !== '') {
+      this.createRecipeService.addItem(this.newItem + ' Grams ' + this.selectedIngredients);
+      this.newItem = '';
+    }
+  }
 
   handleIngredientSelection(): void {
     switch(this.selectedIngredients){
@@ -36,6 +49,7 @@ export class SpoonMeasurmentsComponent {
           console.log('Unknown Selection');
           break;
     }
+    this.newItem = this.result.toString();
   }
 
   hanglePortionSize(): void {

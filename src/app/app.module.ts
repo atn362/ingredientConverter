@@ -9,13 +9,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { SpoonMeasurmentsComponent } from './spoon-measurments/spoon-measurments.component';
+import { RecipeListComponent } from './recipe-list/recipe-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MeasurementsComponent,
     ImageSearchComponent,
-    SpoonMeasurmentsComponent
+    SpoonMeasurmentsComponent,
+    RecipeListComponent
   ],
   imports: [
     BrowserModule,

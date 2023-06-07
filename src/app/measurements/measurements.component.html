@@ -12,26 +12,5 @@
     <hr>
     <button (click)="handleIngredientsSelection(); addItem()">Convert</button>
     <button (click)="clearInput()">Clear</button>
-    <!-- <p *ngIf="result">{{result}} Grams</p> -->
   </div>
 </div>
-
-<div id="titleInput">
-  <input type="text" [(ngModel)]="newTitle">
-  <button [disabled]="disableTitleAdd" (click)="addTitle()">Add Title</button>
-
-</div>
-
-<!-- <div>
-  <input type="text" [(ngModel)]="newItem">
-  <button (click)="addItem()">Add Item</button>
-</div> -->
-
-<div id="printableDiv">
-  <h2 *ngFor="let title of titleList">{{ title }}</h2>
-  <h4 *ngIf="result">Ingredients</h4>
-  <ul>
-    <li *ngFor="let item of itemList">{{ item }}</li>
-  </ul>
-</div>
-<button mat-button color="primary" (click)="printDiv()">Print</button>

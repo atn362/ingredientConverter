@@ -1,0 +1,14 @@
+<div id="titleInput">
+  <input type="text" [(ngModel)]="newTitle">
+  <button [disabled]="disableTitleAdd" (click)="addTitle()">Add Title</button>
+
+</div>
+
+<div id="printableDiv">
+  <h2 *ngFor="let title of titleList">{{ title }}</h2>
+  <h4>Ingredients</h4>
+  <ul>
+    <li *ngFor="let item of recipeItems">{{ item }}</li>
+  </ul>
+</div>
+<button mat-button color="primary" (click)="printDiv()">Print</button>
