@@ -20,6 +20,9 @@ export class SpoonMeasurmentsComponent {
 
   handleIngredientSelection(): void {
     switch(this.selectedIngredients){
+      case SpoonIngredients.SALT:
+        this.result = Math.floor(this.input * 6);
+        break;
       case SpoonIngredients.BAKINGPOWDER:
         this.result = Math.floor(this.input * 5);
         break;
