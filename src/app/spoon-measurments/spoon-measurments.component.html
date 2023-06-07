@@ -1,1 +1,16 @@
-<p>spoon-measurments works great!</p>
+<div id="mainContainer">
+  <div>
+    <h4>Convert Measuring Spoongs to to Grams</h4>
+    <h6>Select Ingredient</h6>
+    <select [(ngModel)]="selectedIngredients">
+      <option *ngFor="let ingredient of ingredients" [value]="ingredient">{{ingredient}}</option>
+    </select>
+    <h6>Select Measurement</h6>
+    <select [(ngModel)]="selectedPortion" (change)="hanglePortionSize()">
+      <option *ngFor="let portion of portions" [value]="portion">{{portion}}</option>
+    </select>
+    <hr>
+    <button (click)="handleIngredientSelection()">Convert</button>
+    <p *ngIf="result">{{result}} Grams</p>
+  </div>
+</div>
