@@ -6,6 +6,7 @@ export enum Ingredients{
   BROWNSUGAR = 'Brown Sugar',
   POWDERSUGAR = 'Powdered Sugar',
   BUTTER = 'Butter',
+  SOURCREAM = 'Sour Cream',
   YOGURT = 'Yorgurt',
   WATERMILK = 'Water or Milk',
   CORNMEAL = 'Corn Meal',

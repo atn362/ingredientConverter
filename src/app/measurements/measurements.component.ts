@@ -56,6 +56,9 @@ export class MeasurementsComponent {
       case Ingredients.BUTTER:
         this.result = Math.floor(this.input * 226);
         break;
+      case Ingredients.SOURCREAM:
+        this.result = Math.floor(this.input * 240);
+        break;
       case Ingredients.YOGURT:
         this.result = Math.floor(this.input * 245);
         break;
