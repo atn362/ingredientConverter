@@ -2,13 +2,12 @@
   <div>
     <h3 style="font-family: 'Dosis', sans-serif;">Measuring Spoons</h3>
     <h3 style="font-family: 'Dosis', sans-serif;">Convert to Grams</h3>
-    <h4>Select Ingredient</h4>
+    <h4 style="font-family: 'Dosis', sans-serif;">Select Ingredient</h4>
     <select style="font-family: 'Dosis', sans-serif;" class="form-select form-select-lg mb-3"
-      aria-label=".form-select-lg example" [(ngModel)]="selectedPortion" (change)="hanglePortionSize()">
-      [(ngModel)]="selectedIngredients">
+      aria-label=".form-select-lg example" [(ngModel)]="selectedIngredients">
       <option *ngFor="let ingredient of ingredients" [value]="ingredient">{{ingredient}}</option>
     </select>
-    <h4 style="font-family: 'Dosis', sans-serif;">Select Measurement</h4>
+    <h4>Select Measurement</h4>
     <select style="font-family: 'Dosis', sans-serif;" class="form-select form-select-lg mb-3"
       aria-label=".form-select-lg example" [(ngModel)]="selectedPortion" (change)="hanglePortionSize()">
       <option *ngFor="let portion of portions" [value]="portion">{{portion}}</option>

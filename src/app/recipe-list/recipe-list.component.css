@@ -1,5 +1,8 @@
 #titleInput{
   margin-left: 25px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 #printableDiv {
@@ -9,3 +12,5 @@
 #buttonSection{
   margin-left: 25px;
 }
+
+

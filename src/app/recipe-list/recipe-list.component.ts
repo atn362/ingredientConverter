@@ -21,7 +21,10 @@ export class RecipeListComponent implements OnInit  {
 
   newTitle: string = '';
   titleList: string[] = [];
+  newMethod: string = '';
+  methodList: string [] = [];
   disableTitleAdd: boolean = false;
+  disabledMethodAdd: boolean = false;
 
   addTitle() {
     if (this.newTitle.trim() !== '') {
@@ -32,6 +35,16 @@ export class RecipeListComponent implements OnInit  {
       this.disableTitleAdd = true;
     }
   }
+
+  addMethod() {
+    if (this.newMethod.trim() !== '') {
+      this.methodList.push(this.newMethod);
+      this.newMethod = '';
+    }
+    if (this.methodList.length >= 1) {
+      this.disabledMethodAdd = true;
+  }
+}
 
   printDiv() {
     const printableElement = document.getElementById('printableDiv');

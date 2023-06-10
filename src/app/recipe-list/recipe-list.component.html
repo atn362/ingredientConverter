@@ -1,7 +1,12 @@
 <div id="titleInput">
-  <input type="text" [(ngModel)]="newTitle">
-  <button class="btn btn-primary" [disabled]="disableTitleAdd" (click)="addTitle()">Add Title</button>
-
+  <div>
+    <input type="text" [(ngModel)]="newTitle">
+    <button class="btn btn-primary" [disabled]="disableTitleAdd" (click)="addTitle()">Add Title</button>
+  </div>
+  <div>
+    <textarea type="text" [(ngModel)]="newMethod"></textarea>
+    <button class="btn btn-primary" [disabled]="disabledMethodAdd" (click)="addMethod()">Add Instructions</button>
+  </div>
 </div>
 
 <div id="printableDiv">
@@ -11,6 +16,7 @@
     <li *ngFor="let item of recipeItems">{{ item }}</li>
   </ul>
 </div>
+<p *ngFor="let method of methodList">{{method}}</p>
 <div id="buttonSection">
   <button class="btn btn-success" (click)="printDiv()">Print</button>
   <button class="btn btn-warning" (click)="clearInput()">Clear</button>
