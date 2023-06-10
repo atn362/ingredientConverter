@@ -3,14 +3,17 @@
     <h3>Measuring Cups</h3>
     <h4>Convert to Grams</h4>
     <h6>Select Ingredient</h6>
-    <select [(ngModel)]="selectedIngredients">
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+      [(ngModel)]="selectedIngredients">
+      <!-- <select [(ngModel)]="selectedIngredients"> -->
       <option *ngFor="let ingredient of ingredients" [value]="ingredient">{{ingredient}}</option>
     </select>
     <h6>Select Measurement</h6>
-    <select [(ngModel)]="selectedPortion" (change)="hanglePortionSize()">
+    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" [(ngModel)]="selectedPortion"
+      (change)="hanglePortionSize()">
       <option *ngFor="let portion of portions" [value]="portion">{{portion}}</option>
     </select>
     <hr>
-    <button (click)="handleIngredientsSelection(); addItem()">Convert</button>
+    <button class="btn btn-primary" (click)="handleIngredientsSelection(); addItem()">Convert</button>
   </div>
 </div>

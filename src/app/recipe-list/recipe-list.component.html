@@ -1,6 +1,6 @@
 <div id="titleInput">
   <input type="text" [(ngModel)]="newTitle">
-  <button [disabled]="disableTitleAdd" (click)="addTitle()">Add Title</button>
+  <button class="btn btn-primary" [disabled]="disableTitleAdd" (click)="addTitle()">Add Title</button>
 
 </div>
 
@@ -12,6 +12,6 @@
   </ul>
 </div>
 <div id="buttonSection">
-  <button mat-button color="primary" (click)="printDiv()">Print</button>
-  <button (click)="clearInput()">Clear</button>
+  <button class="btn btn-primary" (click)="printDiv()">Print</button>
+  <button class="btn btn-primary" (click)="clearInput()">Clear</button>
 </div>
