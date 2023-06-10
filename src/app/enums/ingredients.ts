@@ -10,6 +10,7 @@ export enum Ingredients{
   YOGURT = 'Yorgurt',
   WATERMILK = 'Water or Milk',
   CORNMEAL = 'Corn Meal',
-  OIL = 'Oils'
+  OIL = 'Oils',
+  MAYO = 'Mayo'
 
 }

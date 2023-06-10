@@ -1,16 +1,16 @@
 <div id="mainContainer">
   <div>
-    <h3>Measuring Cups</h3>
-    <h4>Convert to Grams</h4>
-    <h6>Select Ingredient</h6>
-    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
-      [(ngModel)]="selectedIngredients">
+    <h3 style="font-family: 'Dosis', sans-serif;">Measuring Cups</h3>
+    <h3 style="font-family: 'Dosis', sans-serif;">Convert to Grams</h3>
+    <h4 style="font-family: 'Dosis', sans-serif;">Select Ingredient</h4>
+    <select style="font-family: 'Dosis', sans-serif;" class="form-select form-select-lg mb-3"
+      aria-label=".form-select-lg example" [(ngModel)]="selectedIngredients">
       <!-- <select [(ngModel)]="selectedIngredients"> -->
       <option *ngFor="let ingredient of ingredients" [value]="ingredient">{{ingredient}}</option>
     </select>
-    <h6>Select Measurement</h6>
-    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" [(ngModel)]="selectedPortion"
-      (change)="hanglePortionSize()">
+    <h4 style="font-family: 'Dosis', sans-serif;">Select Measurement</h4>
+    <select style="font-family: 'Dosis', sans-serif;" class="form-select form-select-lg mb-3"
+      aria-label=".form-select-lg example" [(ngModel)]="selectedPortion" (change)="hanglePortionSize()">
       <option *ngFor="let portion of portions" [value]="portion">{{portion}}</option>
     </select>
     <hr>

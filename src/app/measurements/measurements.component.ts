@@ -71,6 +71,9 @@ export class MeasurementsComponent {
       case Ingredients.OIL:
         this.result = Math.floor(this.input * 225);
         break;
+      case Ingredients.MAYO:
+        this.result = Math.floor(this.input * 230);
+        break;
       default:
         console.log('Unknown Selection');
         break;
