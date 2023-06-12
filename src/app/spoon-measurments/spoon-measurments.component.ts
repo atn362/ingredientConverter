@@ -34,16 +34,16 @@ export class SpoonMeasurmentsComponent {
   handleIngredientSelection(): void {
     switch(this.selectedIngredients){
       case SpoonIngredients.SALT:
-        this.result = Math.floor(this.input * 6);
+        this.result = Math.ceil(this.input * 6);
         break;
       case SpoonIngredients.BAKINGPOWDER:
-        this.result = Math.floor(this.input * 5);
+        this.result = Math.ceil(this.input * 5);
         break;
       case SpoonIngredients.BAKINGSODA:
-        this.result = Math.floor(this.input * 6);
+        this.result = Math.ceil(this.input * 6);
         break;
       case SpoonIngredients.CINNAMON:
-        this. result = Math.floor(this.input * 3);
+        this. result = Math.ceil(this.input * 3);
         break;
         default:
           console.log('Unknown Selection');
