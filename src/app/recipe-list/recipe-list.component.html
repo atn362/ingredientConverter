@@ -4,9 +4,6 @@
       <input type="text" [(ngModel)]="newTitle">
       <button class="btn btn-primary" (click)="addTitle(); searchImage(); ">Add Title</button>
     </div>
-    <div *ngIf="imageURL">
-      <img id="imgPic" [src]="imageURL" alt="Search Result">
-    </div>
   </div>
 
   <div *ngIf="textAreaPresent">
@@ -16,6 +13,9 @@
 </div>
 
 <div id="printableDiv">
+  <div *ngIf="imageURL">
+    <img id="imgPic" [src]="imageURL" alt="Search Result">
+  </div>
   <h2 *ngFor="let title of titleList">{{ title }}</h2>
   <h4>Ingredient List</h4>
   <ul>
