@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CreateRecipeService } from '../create-recipe.service';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-recipe-list',
@@ -10,7 +12,7 @@ export class RecipeListComponent implements OnInit  {
 
   recipeItems: string[] = [];
 
-  constructor(private createRecipeService: CreateRecipeService) {}
+  constructor(private createRecipeService: CreateRecipeService, private http: HttpClient) {}
 
   ngOnInit() {
     this.createRecipeService.getRecipeItems()
@@ -19,21 +21,36 @@ export class RecipeListComponent implements OnInit  {
       });
   }
 
+  searchImage() {
+    this.http.get<any>(`https://api.unsplash.com/photos/random?query=${this.newTitle}&client_id=4zFYJerlFC5LblA06tev6mQ8erJzBWn-WNK0nVnKCaU`)
+      .subscribe(response => {
+        this.imageURL = response.urls.regular;
+      });
+  }
+
   newTitle: string = '';
   titleList: string[] = [];
   newMethod: string = '';
   methodList: string [] = [];
-  disableTitleAdd: boolean = false;
-  disabledMethodAdd: boolean = false;
+  imageURL!: string;
+  textAreaPresent: boolean = true;
+  disableTitleAdd: boolean = true;
+
+  removeTextArea() {
+    if (this.methodList.length >= 1) {
+      this.textAreaPresent = false
+    }else if (this.titleList.length >= 1) {
+      this.disableTitleAdd = false
+    }
+    console.log(this.methodList.length)
+  }
 
   addTitle() {
     if (this.newTitle.trim() !== '') {
       this.titleList.push(this.newTitle);
       this.newTitle = '';
     }
-    if(this.titleList.length >= 1) {
-      this.disableTitleAdd = true;
-    }
+    this.removeTextArea();
   }
 
   addMethod() {
@@ -41,9 +58,7 @@ export class RecipeListComponent implements OnInit  {
       this.methodList.push(this.newMethod);
       this.newMethod = '';
     }
-    if (this.methodList.length >= 1) {
-      this.disabledMethodAdd = true;
-  }
+  this.removeTextArea();
 }
 
   printDiv() {
