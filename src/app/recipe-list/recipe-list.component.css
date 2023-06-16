@@ -7,6 +7,8 @@
 
 #printableDiv {
   margin-left: 25px;
+  width: 600px;
+  height: 200px;
 }
 
 #buttonSection{
@@ -14,8 +16,8 @@
 }
 
 #imgPic {
-  height: 250px;
-  width: 250px;
+  max-height: 50%;
+  max-width: 50%;
 
 }
 
