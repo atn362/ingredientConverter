@@ -14,17 +14,19 @@
 
 <div id="printableDiv">
   <div *ngIf="imageURL">
-    <img id="imgPic" [src]="imageURL" alt="Search Result">
+    <img style="height: 200px; width: 200px;" id="imgPic" [src]="imageURL" alt="Search Result">
   </div>
-  <h2 *ngFor="let title of titleList">{{ title }}</h2>
-  <h4>Ingredient List</h4>
+  <div>
+    <h2 *ngFor="let title of titleList">{{ title }}</h2>
+    <h4>Ingredient List</h4>
+    <ul>
+      <li *ngFor="let item of recipeItems">{{ item }}</li>
+    </ul>
+  </div>
   <ul>
-    <li *ngFor="let item of recipeItems">{{ item }}</li>
+    <li *ngFor="let method of methodList">{{method}}</li>
   </ul>
 </div>
-<ul>
-  <li *ngFor="let method of methodList">{{method}}</li>
-</ul>
 <div id="buttonSection">
   <button class="btn btn-success" (click)="printDiv()">Print</button>
   <button class="btn btn-warning" (click)="clearInput()">Clear</button>
