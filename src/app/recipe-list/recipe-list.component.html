@@ -1,13 +1,13 @@
 <div id="titleInput">
   <div>
     <div *ngIf="disableTitleAdd">
-      <input type="text" [(ngModel)]="newTitle">
+      <input type="text" placeholder="Input title here" [(ngModel)]="newTitle">
       <button class="btn btn-primary" (click)="addTitle(); searchImage(); ">Add Title</button>
     </div>
   </div>
 
   <div *ngIf="textAreaPresent">
-    <textarea type="text" [(ngModel)]="newMethod"></textarea>
+    <textarea type="text" placeholder="Input method here" [(ngModel)]="newMethod"></textarea>
     <button class="btn btn-primary" (click)="addMethod()">Add Instructions</button>
   </div>
 </div>
@@ -16,15 +16,15 @@
   <div *ngIf="imageURL">
     <img style="height: 200px; width: 200px;" id="imgPic" [src]="imageURL" alt="Search Result">
   </div>
-  <div>
+  <div style="padding-top: 15px;">
     <h2 *ngFor="let title of titleList">{{ title }}</h2>
-    <h4>Ingredient List</h4>
+    <!-- <h4>Ingredient List</h4> -->
     <ul>
       <li *ngFor="let item of recipeItems">{{ item }}</li>
     </ul>
   </div>
   <ul>
-    <li *ngFor="let method of methodList">{{method}}</li>
+    <li style="list-style-type: square;" *ngFor="let method of methodList">{{method}}</li>
   </ul>
 </div>
 <div id="buttonSection">
