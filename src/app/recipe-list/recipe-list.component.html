@@ -1,10 +1,13 @@
 <div id="titleInput">
   <div>
     <div *ngIf="disableTitleAdd">
-      <input type="text" placeholder="Input title here" [(ngModel)]="newTitle">
-      <button class="btn btn-primary" (click)="addTitle(); searchImage(); ">Add Title</button>
+      <input type="text" placeholder="Input title here" [(ngModel)]="query">
+      <button class="btn btn-primary" (click)="addTitle(); search(); ">Add Title</button>
     </div>
   </div>
+  <!--
+  <input type="text" [(ngModel)]="query" placeholder="Enter your search query" />
+  <button (click)="search()">Search</button> -->
 
   <div *ngIf="textAreaPresent">
     <textarea type="text" placeholder="Input method here" [(ngModel)]="newMethod"></textarea>
@@ -13,9 +16,12 @@
 </div>
 
 <div id="printableDiv">
-  <div *ngIf="imageURL">
-    <img style="height: 200px; width: 200px;" id="imgPic" [src]="imageURL" alt="Search Result">
+  <div *ngFor="let image of images">
+    <img style="height: 200px; width: 200px;" [src]="image.link" [alt]="image.title" />
   </div>
+  <!-- <div *ngIf="imageURL">
+    <img style="height: 200px; width: 200px;" id="imgPic" [src]="imageURL" alt="Search Result">
+  </div> -->
   <div style="padding-top: 15px;">
     <h2 *ngFor="let title of titleList">{{ title }}</h2>
     <!-- <h4>Ingredient List</h4> -->
@@ -30,11 +36,4 @@
 <div id="buttonSection">
   <button class="btn btn-success" (click)="printDiv()">Print</button>
   <button class="btn btn-warning" (click)="clearInput()">Clear</button>
-</div>
-
-
-<input type="text" [(ngModel)]="query" placeholder="Enter your search query" />
-<button (click)="search()">Search</button>
-<div *ngFor="let image of images">
-  <img [src]="image.link" [alt]="image.title" />
 </div>
