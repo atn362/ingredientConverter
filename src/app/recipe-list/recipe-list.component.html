@@ -1,7 +1,7 @@
 <div id="titleInput">
   <div>
     <div *ngIf="disableTitleAdd">
-      <input type="text" placeholder="Input title here" [(ngModel)]="query">
+      <input type="text" placeholder="Input title here" [(ngModel)]="query" [(ngModel)]="newTitle">
       <button class="btn btn-primary" (click)="addTitle(); search(); ">Add Title</button>
     </div>
   </div>
