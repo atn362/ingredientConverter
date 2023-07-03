@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CreateRecipeService } from '../create-recipe.service';
 import { HttpClient } from '@angular/common/http';
+import { ImageSearchService } from '../image-search.service';
 
 
 @Component({
@@ -11,8 +12,11 @@ import { HttpClient } from '@angular/common/http';
 export class RecipeListComponent implements OnInit  {
 
   recipeItems: string[] = [];
+  query: string = '';
+  images: any[] = [];
 
-  constructor(private createRecipeService: CreateRecipeService, private http: HttpClient) {}
+
+  constructor(private createRecipeService: CreateRecipeService, private http: HttpClient, private imageSearchService: ImageSearchService) {}
 
   ngOnInit() {
     this.createRecipeService.getRecipeItems()
@@ -21,11 +25,19 @@ export class RecipeListComponent implements OnInit  {
       });
   }
 
+
+
   searchImage() {
     this.http.get<any>(`https://api.unsplash.com/photos/random?query=${this.newTitle}&client_id=4zFYJerlFC5LblA06tev6mQ8erJzBWn-WNK0nVnKCaU`)
       .subscribe(response => {
         this.imageURL = response.urls.regular;
       });
+  }
+
+  search() {
+    this.imageSearchService.searchImages(this.query).subscribe((response: any) => {
+      this.images = response.items;
+    });
   }
 
   newTitle: string = '';

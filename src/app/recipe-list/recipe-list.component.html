@@ -31,3 +31,10 @@
   <button class="btn btn-success" (click)="printDiv()">Print</button>
   <button class="btn btn-warning" (click)="clearInput()">Clear</button>
 </div>
+
+
+<input type="text" [(ngModel)]="query" placeholder="Enter your search query" />
+<button (click)="search()">Search</button>
+<div *ngFor="let image of images">
+  <img [src]="image.link" [alt]="image.title" />
+</div>
