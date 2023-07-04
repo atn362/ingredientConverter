@@ -8,7 +8,8 @@ export enum Ingredients{
   BUTTER = 'Butter',
   SOURCREAM = 'Sour Cream',
   YOGURT = 'Yorgurt',
-  WATERMILK = 'Water or Milk',
+  WATER = 'Water',
+  MILK = 'Milk',
   CORNMEAL = 'Corn Meal',
   OIL = 'Oils',
   MAYO = 'Mayo'

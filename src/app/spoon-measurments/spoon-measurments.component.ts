@@ -36,6 +36,12 @@ export class SpoonMeasurmentsComponent {
       case SpoonIngredients.SALT:
         this.result = Math.ceil(this.input * 6);
         break;
+      case SpoonIngredients.SUGAR:
+        this.result = Math.ceil(this.input * 4);
+        break;
+      case SpoonIngredients.YEAST:
+        this.result = Math.ceil(this.input * 3);
+        break;
       case SpoonIngredients.BAKINGPOWDER:
         this.result = Math.ceil(this.input * 5);
         break;
@@ -43,7 +49,10 @@ export class SpoonMeasurmentsComponent {
         this.result = Math.ceil(this.input * 6);
         break;
       case SpoonIngredients.CINNAMON:
-        this. result = Math.ceil(this.input * 3);
+        this.result = Math.ceil(this.input * 3);
+        break;
+      case SpoonIngredients.OIL:
+        this.result = Math.ceil(this.input * 5);
         break;
         default:
           console.log('Unknown Selection');

@@ -62,7 +62,10 @@ export class MeasurementsComponent {
       case Ingredients.YOGURT:
         this.result = Math.floor(this.input * 245);
         break;
-      case Ingredients.WATERMILK:
+      case Ingredients.WATER:
+        this.result = Math.floor(this.input * 236);
+        break;
+      case Ingredients.MILK:
         this.result = Math.floor(this.input * 236);
         break;
       case Ingredients.CORNMEAL:
@@ -118,6 +121,24 @@ export class MeasurementsComponent {
         break;
       case Portion.TWOCUPS:
         this.input = 2;
+        break;
+      case Portion.TWOQUARTERCUP:
+        this.input = 2.25;
+        break;
+      case Portion.TWOONETHIRDCUP:
+        this.input = 2.334;
+        break;
+      case Portion.TWOHALFCUP:
+        this.input = 2.5;
+        break;
+      case Portion.TWOTWOTHIRDCUP:
+        this.input = 2.667;
+        break;
+      case Portion.TWOTHREEQUARTERCUP:
+        this.input = 2.75;
+        break;
+      case Portion.THREECUPS:
+        this.input = 3;
         break;
       default:
         console.log('Unknown Selection');
