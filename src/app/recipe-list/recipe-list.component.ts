@@ -14,7 +14,13 @@ export class RecipeListComponent implements OnInit  {
   recipeItems: string[] = [];
   query: string = '';
   images: any[] = [];
-
+  newTitle: string = '';
+  titleList: string[] = [];
+  newMethod: string = '';
+  methodList: string [] = [];
+  imageURL!: string;
+  textAreaPresent: boolean = true;
+  disableTitleAdd: boolean = true;
 
   constructor(private createRecipeService: CreateRecipeService, private http: HttpClient, private imageSearchService: ImageSearchService) {}
 
@@ -24,8 +30,6 @@ export class RecipeListComponent implements OnInit  {
         this.recipeItems = items;
       });
   }
-
-
 
   searchImage() {
     this.http.get<any>(`https://api.unsplash.com/photos/random?query=${this.newTitle}&client_id=4zFYJerlFC5LblA06tev6mQ8erJzBWn-WNK0nVnKCaU`)
@@ -39,14 +43,6 @@ export class RecipeListComponent implements OnInit  {
       this.images = response.items;
     });
   }
-
-  newTitle: string = '';
-  titleList: string[] = [];
-  newMethod: string = '';
-  methodList: string [] = [];
-  imageURL!: string;
-  textAreaPresent: boolean = true;
-  disableTitleAdd: boolean = true;
 
   removeTextArea() {
     if (this.methodList.length >= 1) {
@@ -71,7 +67,7 @@ export class RecipeListComponent implements OnInit  {
       this.newMethod = '';
     }
   this.removeTextArea();
-}
+  }
 
   printDiv() {
     const printableElement = document.getElementById('printableDiv');

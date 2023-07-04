@@ -15,13 +15,11 @@ export class SpoonMeasurmentsComponent {
 
   input!: number;
   result!: number;
-
   selectedIngredients!: SpoonIngredients;
   selectedPortion!: SpoonMeasurements;
   portions: string[] = Object.values(SpoonMeasurements);
   ingredients: string[] = Object.values(SpoonIngredients);
-
-    itemList: string[] = [];
+  itemList: string[] = [];
   newItem: string = '';
 
    addItem() {
