@@ -7,5 +7,6 @@ export enum SpoonMeasurements {
     QUARTERTBSP = '1/4 Tbsp',
     HALFTBSP = '1/2 Tbsp',
     THREEQUARTERTBSP = '3/4 Tbsp',
-    TABLESPOON = '1 Tbsp'
+    TABLESPOON = '1 Tbsp',
+    TWOTABLESPOON = '2 Tbsps'
 }

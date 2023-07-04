@@ -54,6 +54,9 @@ export class SpoonMeasurmentsComponent {
       case SpoonIngredients.OIL:
         this.result = Math.ceil(this.input * 5);
         break;
+      case SpoonIngredients.WATER:
+        this.result = Math.ceil(this.input * 5);
+        break;
         default:
           console.log('Unknown Selection');
           break;
@@ -89,6 +92,9 @@ export class SpoonMeasurmentsComponent {
         break;
       case SpoonMeasurements.TABLESPOON:
         this.input = 3;
+        break;
+      case SpoonMeasurements.TWOTABLESPOON:
+        this. input = 6;
         break;
         default:
         console.log('Unknown Selection');

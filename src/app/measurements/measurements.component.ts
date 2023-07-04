@@ -53,6 +53,9 @@ export class MeasurementsComponent {
       case Ingredients.POWDERSUGAR:
         this.result = Math.floor(this.input * 120);
         break;
+      case Ingredients.COCOAPOWDER:
+        this.result = Math.floor(this.input * 100);
+        break;
       case Ingredients.BUTTER:
         this.result = Math.floor(this.input * 226);
         break;
