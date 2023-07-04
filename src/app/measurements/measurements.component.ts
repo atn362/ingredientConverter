@@ -45,6 +45,7 @@ export class MeasurementsComponent {
       this.createRecipeService.addItem(this.totalEggs + ' Eggs');
       this.totalEggs = '';
     }
+    this.eggCounter = 0;
   }
 
 
