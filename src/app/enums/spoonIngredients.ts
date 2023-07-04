@@ -6,5 +6,6 @@ export enum SpoonIngredients {
   BAKINGSODA = 'Baking Soda',
   CINNAMON = 'Cinnamon',
   OIL = 'Oil',
-  WATER = 'Water'
+  WATER = 'Water',
+  VANILLA = 'Vanilla Extract'
 }

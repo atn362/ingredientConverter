@@ -14,12 +14,12 @@ export class MeasurementsComponent {
 
   input!: number;
   result!: number;
-
+  totalEggs: string = '';
+  eggCounter: number = 0;
   selectedIngredients!: Ingredients;
   selectedPortion!: Portion;
   portions: string[] = Object.values(Portion);
   ingredients: string[] = Object.values(Ingredients);
-
   itemList: string[] = [];
   newItem: string = '';
   disableTitleAdd: boolean = false;
@@ -28,6 +28,22 @@ export class MeasurementsComponent {
     if (this.newItem.trim() !== '') {
       this.createRecipeService.addItem(this.newItem + ' Grams ' + this.selectedIngredients);
       this.newItem = '';
+    }
+  }
+
+  increment() {
+    this.eggCounter++;
+  }
+
+  decrement() {
+    this.eggCounter--;
+  }
+
+  addEggToList() {
+    this.totalEggs = this.eggCounter.toString();
+    if(this.totalEggs.trim() !== '') {
+      this.createRecipeService.addItem(this.totalEggs + ' Eggs');
+      this.totalEggs = '';
     }
   }
 

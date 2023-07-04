@@ -13,7 +13,14 @@
       aria-label=".form-select-lg example" [(ngModel)]="selectedPortion" (change)="hanglePortionSize()">
       <option *ngFor="let portion of portions" [value]="portion">{{portion}}</option>
     </select>
+
     <hr>
     <button class="btn btn-primary" (click)="handleIngredientsSelection(); addItem()">Convert</button>
+    <hr>
+    <h1>Eggs: {{ eggCounter }}</h1>
+    <button (click)="increment()">+</button>
+    <button (click)="decrement()">-</button>
+    <button (click)=" addEggToList()">Add Eggs to List</button>
+
   </div>
 </div>

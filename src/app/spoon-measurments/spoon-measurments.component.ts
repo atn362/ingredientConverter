@@ -55,7 +55,10 @@ export class SpoonMeasurmentsComponent {
       case SpoonIngredients.WATER:
         this.result = Math.ceil(this.input * 5);
         break;
-        default:
+      case SpoonIngredients.VANILLA:
+        this.result = Math.ceil(this.input * 4);
+        break;
+          default:
           console.log('Unknown Selection');
           break;
     }
@@ -79,6 +82,12 @@ export class SpoonMeasurmentsComponent {
       case SpoonMeasurements.TEASPOON:
         this.input = 1;
         break;
+      case SpoonMeasurements.ONEHALFTSP:
+        this.input = 1.5;
+        break;
+      case SpoonMeasurements.TWOTEASPOON:
+        this.input = 2;
+        break;
       case SpoonMeasurements.QUARTERTBSP:
         this.input = .75;
         break;
@@ -94,9 +103,9 @@ export class SpoonMeasurmentsComponent {
       case SpoonMeasurements.TWOTABLESPOON:
         this. input = 6;
         break;
-        default:
-        console.log('Unknown Selection');
-        break;
+          default:
+          console.log('Unknown Selection');
+          break;
     }
   }
 
