@@ -1,7 +1,7 @@
 <div id="titleInput">
   <div>
     <div *ngIf="disableTitleAdd">
-      <input type="text" placeholder="Input title here" [(ngModel)]="query" [(ngModel)]="newTitle">
+      <input type="text" placeholder="Input title here" spellcheck="true" [(ngModel)]="query" [(ngModel)]="newTitle">
       <button class="btn btn-primary" (click)="addTitle(); search(); ">Add Title</button>
     </div>
   </div>
@@ -10,7 +10,7 @@
   <button (click)="search()">Search</button> -->
 
   <div *ngIf="textAreaPresent">
-    <textarea type="text" placeholder="Input method here" [(ngModel)]="newMethod"></textarea>
+    <textarea type="text" placeholder="Input method here" spellcheck="true" [(ngModel)]="newMethod"></textarea>
     <button class="btn btn-primary" (click)="addMethod()">Add Instructions</button>
   </div>
 </div>
