@@ -12,24 +12,36 @@ export class ImageSearchService {
 
   constructor(private http: HttpClient) { }
 
-  postAnimalData() {
+  postIngredientData() {
     const requestBody = {
-      name: 'Sara',
-      has_pet: 1,
-      pet_name: 'John',
-      pet_age: 12
+      title: "tacos",
+      foods: "tortilla",
 
     };
 
     const url = 'http://localhost:3000/api';
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-    this.http.get(url).subscribe(
+    this.http.post(url, requestBody, { headers }).subscribe(
       (response) => {
         console.log('POST Request Successful:', response);
       },
       (error) => {
         console.error('Error making POST Request:', error);
+      }
+    );
+  }
+
+  getIngredientList() {
+
+    const url = 'http://localhost:3000/api';
+
+    this.http.get(url).subscribe(
+      (response) => {
+        console.log('GET Request Successful:', response);
+      },
+      (error) => {
+        console.error('Error making GET Request:', error);
       }
     );
   }
