@@ -3,6 +3,7 @@ export enum Ingredients{
   BREADFLOUR = 'Bread Flour',
   CAKEFLOUR = 'Cake Flour',
   RYEFLOUR = 'Rye Flour',
+  DOUBLEZEROFLOUR = '00 Flour',
   SUGAR = 'Sugar',
   BROWNSUGAR = 'Brown Sugar',
   POWDERSUGAR = 'Powdered Sugar',

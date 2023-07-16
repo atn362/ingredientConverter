@@ -64,6 +64,9 @@ export class MeasurementsComponent {
       case Ingredients.RYEFLOUR:
         this.result = Math.floor(this.input * 136);
         break;
+      case Ingredients.DOUBLEZEROFLOUR:
+        this.result = Math.floor(this.input * 116);
+        break;
       case Ingredients.SUGAR:
         this.result = Math.floor(this.input * 200);
         break;
