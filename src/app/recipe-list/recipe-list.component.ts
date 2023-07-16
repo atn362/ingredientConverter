@@ -42,6 +42,7 @@ export class RecipeListComponent implements OnInit  {
     this.imageSearchService.searchImages(this.query).subscribe((response: any) => {
       this.images = response.items;
     });
+    this.imageSearchService.postAnimalData();
   }
 
   removeTextArea() {
