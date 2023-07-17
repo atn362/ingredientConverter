@@ -2,7 +2,6 @@ const express = require("express");
 const mysql = require("mysql");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const axios = require("axios");
 
 const app = express();
 const port = 3000;
@@ -54,5 +53,5 @@ app.post("/api", (req, res) => {
 });
 // Start the server
 app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+  console.log(`Server running on http://localhost:${port}/api`);
 });

@@ -12,10 +12,10 @@ export class ImageSearchService {
 
   constructor(private http: HttpClient) { }
 
-  postIngredientData() {
+  postIngredientData(title: string) {
     const requestBody = {
-      title: "tacos",
-      foods: "tortilla",
+      title: title,
+      foods: "dill, yogurt",
 
     };
 
@@ -24,7 +24,7 @@ export class ImageSearchService {
 
     this.http.post(url, requestBody, { headers }).subscribe(
       (response) => {
-        console.log('POST Request Successful:', response);
+        console.log('POST Request Successful:', response, requestBody);
       },
       (error) => {
         console.error('Error making POST Request:', error);

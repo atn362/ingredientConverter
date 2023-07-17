@@ -31,18 +31,19 @@ export class RecipeListComponent implements OnInit  {
       });
   }
 
-  searchImage() {
-    this.http.get<any>(`https://api.unsplash.com/photos/random?query=${this.newTitle}&client_id=4zFYJerlFC5LblA06tev6mQ8erJzBWn-WNK0nVnKCaU`)
-      .subscribe(response => {
-        this.imageURL = response.urls.regular;
-      });
-  }
+  // searchImage() {
+  //   this.http.get<any>(`https://api.unsplash.com/photos/random?query=${this.newTitle}&client_id=4zFYJerlFC5LblA06tev6mQ8erJzBWn-WNK0nVnKCaU`)
+  //     .subscribe(response => {
+  //       this.imageURL = response.urls.regular;
+  //     });
+  // }
 
   search() {
     this.imageSearchService.searchImages(this.query).subscribe((response: any) => {
       this.images = response.items;
     });
-    this.imageSearchService.getIngredientList();
+    this.imageSearchService.postIngredientData(this.query);
+    console.log(this.query)
   }
 
   removeTextArea() {
