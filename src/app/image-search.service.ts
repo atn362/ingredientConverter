@@ -15,7 +15,7 @@ export class ImageSearchService {
   postIngredientData(title: string) {
     const requestBody = {
       title: title,
-      foods: "dill, yogurt",
+      foods: 'foods',
 
     };
 

@@ -42,6 +42,7 @@ export class RecipeListComponent implements OnInit  {
     this.imageSearchService.searchImages(this.query).subscribe((response: any) => {
       this.images = response.items;
     });
+
     this.imageSearchService.postIngredientData(this.query);
     console.log(this.query)
   }
@@ -52,7 +53,6 @@ export class RecipeListComponent implements OnInit  {
     }else if (this.titleList.length >= 1) {
       this.disableTitleAdd = false
     }
-    console.log(this.methodList.length)
   }
 
   addTitle() {
