@@ -12,10 +12,10 @@ export class ImageSearchService {
 
   constructor(private http: HttpClient) { }
 
-  postIngredientData(title: string) {
+  postIngredientData(title: string, foods: string) {
     const requestBody = {
       title: title,
-      foods: 'foods',
+      foods: foods,
 
     };
 

@@ -43,8 +43,9 @@ export class RecipeListComponent implements OnInit  {
       this.images = response.items;
     });
 
-    this.imageSearchService.postIngredientData(this.query);
-    console.log(this.query)
+    this.imageSearchService.postIngredientData(this.query, this.newMethod);
+    console.log(this.newMethod);
+    console.log(this.query);
   }
 
   removeTextArea() {
