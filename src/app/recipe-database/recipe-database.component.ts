@@ -19,6 +19,7 @@ export class RecipeDatabaseComponent {
       }
     )
   };
+
   deleteRecipe(recipeId?: number) {
     if (recipeId !== undefined) {
     this.imageSearchService.deleteRecipe(recipeId).subscribe(
@@ -36,11 +37,6 @@ export class RecipeDatabaseComponent {
     }
     location.reload();
   }
-
-
-
-
-
 
 
 }

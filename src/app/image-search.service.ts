@@ -69,7 +69,7 @@ export class ImageSearchService {
     this.http.get(url).subscribe(
       (response) => {
         console.log('GET Request Successful:', response);
-        console.log()
+
       },
       (error) => {
         console.error('Error making GET Request:', error);
