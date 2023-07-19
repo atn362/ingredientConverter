@@ -11,7 +11,7 @@ export class ImageSearchService {
   private apiKey = 'AIzaSyDX4YE3aXF-QZs_7Hgms75-SU0f_FyZiCU';
   private cx = '411888bfb85444023';
   private apiUrl = `https://www.googleapis.com/customsearch/v1?key=${this.apiKey}&cx=${this.cx}&searchType=image&q=`;
-
+  private deleteUrl = 'http://localhost:3000/api/deleteRecord/';
   constructor(private http: HttpClient) { }
 
 
@@ -75,6 +75,10 @@ export class ImageSearchService {
         console.error('Error making GET Request:', error);
       }
     );
+  }
+
+  deleteRecipe(recipeId: number) {
+    return this.http.delete(this.deleteUrl + recipeId);
   }
 
 

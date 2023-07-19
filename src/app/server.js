@@ -72,6 +72,19 @@ app.post("/api", (req, res) => {
     }
   });
 });
+
+app.delete("/api/deleteRecord/:id", (req, res) => {
+  const id = req.params.id;
+
+  connection.query("DELETE FROM recipes WHERE id = ?", [id], (err, result) => {
+    if (err) {
+      console.error("Error deleting record:", err);
+      res.status(500).json({ error: "Failed to delete record" });
+    } else {
+      res.status(200).json({ message: "Record deleted successfully" });
+    }
+  });
+});
 // Start the server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}/api`);

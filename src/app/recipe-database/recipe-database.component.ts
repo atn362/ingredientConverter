@@ -18,8 +18,24 @@ export class RecipeDatabaseComponent {
         this.recipeList = recipeList
       }
     )
-    console.log('My comment List', this.recipeList)
   };
+  deleteRecipe(recipeId?: number) {
+    if (recipeId !== undefined) {
+    this.imageSearchService.deleteRecipe(recipeId).subscribe(
+      () => {
+        console.log('Record deleted successfully');
+        console.log(recipeId)
+        // Handle success, update the UI, etc.
+      },
+      (error) => {
+        console.error('Error deleting record:', error);
+        // Handle error, show error message, etc.
+      }
+
+    );
+    }
+    location.reload();
+  }
 
 
 
