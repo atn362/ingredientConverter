@@ -40,8 +40,8 @@ app.get("/api", (req, res) => {
 app.post("/api", (req, res) => {
   const { title, ingredients, method } = req.body;
   const query =
-    "INSERT INTO recipes (title, ingredients, method) VALUES (?, ?, ?)";
-  const values = [title, ingredients, method];
+    "INSERT INTO recipes (title, ingredients, method) VALUES (?, CAST(? AS JSON), ?)";
+  const values = [title, JSON.stringify(ingredients), method];
 
   connection.query(query, values, (err, result) => {
     if (err) {
