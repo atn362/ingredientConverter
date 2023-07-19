@@ -17,5 +17,6 @@ export class CreateRecipeService {
     const items = this.recipeItems.getValue();
     items.push(item);
     this.recipeItems.next(items);
+    console.log(this.recipeItems)
   }
 }

@@ -12,7 +12,7 @@ const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "root",
-  database: "recipe",
+  database: "ingredientconverter",
 });
 
 const requestBody = {
@@ -31,16 +31,17 @@ app.use(bodyParser.json());
 
 // Define API routes
 app.get("/api", (req, res) => {
-  connection.query("SELECT * FROM ingredients", (err, results) => {
+  connection.query("SELECT * FROM recipes", (err, results) => {
     if (err) throw err;
     res.json(results);
   });
 });
 
 app.post("/api", (req, res) => {
-  const { title, foods } = req.body;
-  const query = "INSERT INTO ingredients (title, foods) VALUES (?, ?)";
-  const values = [title, foods];
+  const { title, ingredients, method } = req.body;
+  const query =
+    "INSERT INTO recipes (title, ingredients, method) VALUES (?, ?, ?)";
+  const values = [title, ingredients, method];
 
   connection.query(query, values, (err, result) => {
     if (err) {

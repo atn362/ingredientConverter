@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Ingredients } from './enums/ingredients';
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +13,11 @@ export class ImageSearchService {
 
   constructor(private http: HttpClient) { }
 
-  postIngredientData(title: string, foods: string) {
+  postIngredientData(title: string, method: string) {
     const requestBody = {
       title: title,
-      foods: foods,
+      Ingredients: ["stuff", "stuff", "stuff"],
+      method: method,
 
     };
 
