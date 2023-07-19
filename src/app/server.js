@@ -37,6 +37,26 @@ app.get("/api", (req, res) => {
   });
 });
 
+app.get(`/api/:id`, (req, res) => {
+  const recipeId = req.params.id;
+  const query = "SELECT * FROM recipes WHERE id = ?";
+  const values = [recipeId];
+
+  connection.query(query, values, (err, result) => {
+    if (err) {
+      console.error("Error executing SQL query:", err);
+      res.status(500).json({ error: "Internal server error" });
+    } else {
+      if (result.length === 0) {
+        res.status(404).json({ error: "Recipe not found" });
+      } else {
+        const recipe = result[0]; // Assuming id is unique, so we only expect one result
+        res.status(200).json(recipe);
+      }
+    }
+  });
+});
+
 app.post("/api", (req, res) => {
   const { title, ingredients, method } = req.body;
   const query =

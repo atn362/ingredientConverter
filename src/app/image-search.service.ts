@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Ingredients } from './enums/ingredients';
-
+import { recipe } from './interfaces/recipe';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,8 +12,9 @@ export class ImageSearchService {
 
   constructor(private http: HttpClient) { }
 
+
   postIngredientData(title: string, ingredients:string[], method: string) {
-    const requestBody = {
+    const requestBody: recipe = {
       title: title,
       ingredients: ingredients,
       method: method,
@@ -41,6 +41,22 @@ export class ImageSearchService {
     this.http.get(url).subscribe(
       (response) => {
         console.log('GET Request Successful:', response);
+        console.log()
+      },
+      (error) => {
+        console.error('Error making GET Request:', error);
+      }
+    );
+  }
+
+  getIngredientById(id: number) {
+
+    const url = `http://localhost:3000/api/${id}`;
+
+    this.http.get(url).subscribe(
+      (response) => {
+        console.log('GET Request Successful:', response);
+        console.log()
       },
       (error) => {
         console.error('Error making GET Request:', error);

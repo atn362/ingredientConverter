@@ -21,6 +21,7 @@ export class RecipeListComponent implements OnInit  {
   imageURL!: string;
   textAreaPresent: boolean = true;
   disableTitleAdd: boolean = true;
+  ingredientId: number = 0;
 
   constructor(private createRecipeService: CreateRecipeService, private http: HttpClient, private imageSearchService: ImageSearchService) {}
 
@@ -45,8 +46,13 @@ export class RecipeListComponent implements OnInit  {
 
     this.imageSearchService.getIngredientList();
     this.imageSearchService.postIngredientData(this.query, this.recipeItems, this.newMethod);
+
     console.log(this.newMethod);
     console.log(this.query);
+  }
+
+  getIngredientById() {
+    this.imageSearchService.getIngredientById(this.ingredientId);
   }
 
   removeTextArea() {
