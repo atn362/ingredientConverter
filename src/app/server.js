@@ -15,10 +15,10 @@ const connection = mysql.createConnection({
   database: "ingredientconverter",
 });
 
-const requestBody = {
-  title: "tacos",
-  foods: "tortilla",
-};
+// const requestBody = {
+//   title: "tacos",
+//   foods: "tortilla",
+// };
 
 // Connect to MySQL database
 connection.connect((err) => {
