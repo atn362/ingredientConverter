@@ -47,8 +47,6 @@ export class RecipeListComponent implements OnInit  {
     this.imageSearchService.getIngredientList();
     this.imageSearchService.postIngredientData(this.query, this.recipeItems, this.newMethod);
 
-    console.log(this.newMethod);
-    console.log(this.query);
   }
 
   getIngredientById() {

@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { SpoonMeasurmentsComponent } from './spoon-measurments/spoon-measurments.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
+import { RecipeDatabaseComponent } from './recipe-database/recipe-database.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RecipeListComponent } from './recipe-list/recipe-list.component';
     MeasurementsComponent,
     ImageSearchComponent,
     SpoonMeasurmentsComponent,
-    RecipeListComponent
+    RecipeListComponent,
+    RecipeDatabaseComponent
   ],
   imports: [
     BrowserModule,

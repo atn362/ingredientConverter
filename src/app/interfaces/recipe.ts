@@ -1,4 +1,5 @@
-export interface recipe {
+export interface Recipe {
+  id?: number,
   title: string,
   ingredients: string[],
   method: string
