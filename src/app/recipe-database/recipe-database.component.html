@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="!fetchedRecipe">
   <div class="row">
     <div class="col">
       <ul class="list-group mt-3" *ngFor="let recipe of recipeList">
@@ -14,12 +14,12 @@
 
 
 
-<input [(ngModel)]="recipeId" type="number" placeholder="Enter Recipe ID">
-<button (click)="getRecipeById()">Get Recipe</button>
 
-<!-- Display the fetched recipe -->
+
 <div *ngIf="fetchedRecipe">
   <h2>{{ fetchedRecipe.title }}</h2>
   <p>Ingredients: {{ fetchedRecipe.ingredients }}</p>
   <p>Method: {{ fetchedRecipe.method }}</p>
 </div>
+<input [(ngModel)]="recipeId" type="number" placeholder="Enter Recipe ID">
+<button (click)="getRecipeById()">Get Recipe</button>
