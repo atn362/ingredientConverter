@@ -48,12 +48,13 @@ export class RecipeDatabaseComponent {
           this.fetchedRecipe = response;
         },
         (error) => {
-          console.error('Error deleting record:', error);
+         alert('No Such Recipe Found')
           // Handle error, show error message, etc.
         }
 
       );
       }
+
 
     }
 
