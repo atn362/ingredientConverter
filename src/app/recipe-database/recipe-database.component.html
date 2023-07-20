@@ -10,3 +10,16 @@
     </div>
   </div>
 </div>
+
+
+
+
+<input [(ngModel)]="recipeId" type="number" placeholder="Enter Recipe ID">
+<button (click)="getRecipeById()">Get Recipe</button>
+
+<!-- Display the fetched recipe -->
+<div *ngIf="fetchedRecipe">
+  <h2>{{ fetchedRecipe.title }}</h2>
+  <p>Ingredients: {{ fetchedRecipe.ingredients }}</p>
+  <p>Method: {{ fetchedRecipe.method }}</p>
+</div>

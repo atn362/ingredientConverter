@@ -37,7 +37,7 @@ app.get("/api", (req, res) => {
   });
 });
 
-app.get(`/api/:id`, (req, res) => {
+app.getById(`/api/:id`, (req, res) => {
   const recipeId = req.params.id;
   const query = "SELECT * FROM recipes WHERE id = ?";
   const values = [recipeId];

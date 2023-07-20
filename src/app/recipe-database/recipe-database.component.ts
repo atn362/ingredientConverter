@@ -10,6 +10,8 @@ import { Recipe } from '../interfaces/Recipe';
 export class RecipeDatabaseComponent {
 
   public recipeList: Recipe[] = [];
+  recipeId: number | undefined;
+  fetchedRecipe: Recipe | undefined;
 
   constructor(private imageSearchService: ImageSearchService) {
     this.imageSearchService.getRecipeArray();
@@ -26,7 +28,7 @@ export class RecipeDatabaseComponent {
       () => {
         console.log('Record deleted successfully');
         console.log(recipeId)
-        // Handle success, update the UI, etc.
+        location.reload();
       },
       (error) => {
         console.error('Error deleting record:', error);
@@ -35,8 +37,25 @@ export class RecipeDatabaseComponent {
 
     );
     }
-    location.reload();
+
   }
+
+  getRecipeById() {
+    if (this.recipeId !== undefined) {
+      this.imageSearchService.getIngredientById(this.recipeId).subscribe(
+        (response: Recipe) => {
+          console.log('Record retrieved successfully');
+          this.fetchedRecipe = response;
+        },
+        (error) => {
+          console.error('Error deleting record:', error);
+          // Handle error, show error message, etc.
+        }
+
+      );
+      }
+
+    }
 
 
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Recipe } from './interfaces/Recipe'
-import {BehaviorSubject, first} from "rxjs";
+import {BehaviorSubject, first, Observable } from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
@@ -62,19 +62,24 @@ export class ImageSearchService {
     });
   }
 
-  getIngredientById(id: number) {
+  // getIngredientById(id: number) {
 
-    const url = `http://localhost:3000/api/${id}`;
+  //   const url = `http://localhost:3000/api/${id}`;
 
-    this.http.get(url).subscribe(
-      (response) => {
-        console.log('GET Request Successful:', response);
+  //   this.http.get(url).subscribe(
+  //     (response) => {
+  //       console.log('GET Request Successful:', response);
 
-      },
-      (error) => {
-        console.error('Error making GET Request:', error);
-      }
-    );
+  //     },
+  //     (error) => {
+  //       console.error('Error making GET Request:', error);
+  //     }
+  //   );
+  // }
+
+  getIngredientById(recipeId: number): Observable<any> {
+    const url = `http://localhost:3000/api/${recipeId}`;
+    return this.http.get(url);
   }
 
   deleteRecipe(recipeId: number) {
