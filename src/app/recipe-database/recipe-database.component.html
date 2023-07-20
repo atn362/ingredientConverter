@@ -1,7 +1,12 @@
-<ul *ngFor="let recipe of recipeList">
-  <li>{{ recipe.id }}</li>
-  <li>{{ recipe.title }}</li>
-  <li>{{ recipe.ingredients }}</li>
-  <li>{{ recipe.method }}</li>
-  <button class="btn btn-danger" (click)="deleteRecipe(recipe.id)">Delete Recipe</button>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <ul class="list-group mt-3" *ngFor="let recipe of recipeList">
+        <li class="list-group-item">Title: {{ recipe.title }}</li>
+        <li class="list-group-item">Ingredients: {{ recipe.ingredients }}</li>
+        <li class="list-group-item">Method: {{ recipe.method }}</li>
+        <button class="btn btn-danger mt-3" (click)="deleteRecipe(recipe.id)">Delete Recipe</button>
+      </ul>
+    </div>
+  </div>
+</div>
