@@ -21,11 +21,19 @@ export class SpoonMeasurmentsComponent {
   ingredients: string[] = Object.values(SpoonIngredients);
   itemList: string[] = [];
   newItem: string = '';
+  additionalIngredient: string = '';
 
    addItem() {
     if (this.newItem.trim() !== '') {
       this.createRecipeService.addItem(this.newItem + ' Grams ' + this.selectedIngredients);
       this.newItem = '';
+    }
+  }
+
+  addAdditionalIngredient() {
+      if(this.additionalIngredient.trim() !== '') {
+      this.createRecipeService.addItem(this.additionalIngredient);
+      this.additionalIngredient = '';
     }
   }
 

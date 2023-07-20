@@ -1,18 +1,27 @@
-<div id="mainContainer">
-  <div>
-    <h3 style="font-family: 'Dosis', sans-serif;">Measuring Spoons</h3>
-    <h3 style="font-family: 'Dosis', sans-serif;">Convert to Grams</h3>
-    <h4 style="font-family: 'Dosis', sans-serif;">Select Ingredient</h4>
-    <select style="font-family: 'Dosis', sans-serif;" class="form-select form-select-lg mb-3"
-      aria-label=".form-select-lg example" [(ngModel)]="selectedIngredients">
-      <option *ngFor="let ingredient of ingredients" [value]="ingredient">{{ingredient}}</option>
-    </select>
-    <h4>Select Measurement</h4>
-    <select style="font-family: 'Dosis', sans-serif;" class="form-select form-select-lg mb-3"
-      aria-label=".form-select-lg example" [(ngModel)]="selectedPortion" (change)="hanglePortionSize()">
-      <option *ngFor="let portion of portions" [value]="portion">{{portion}}</option>
-    </select>
-    <hr>
-    <button class="btn btn-primary" (click)="handleIngredientSelection(); addItem()">Convert</button>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h3 style="font-family: 'Dosis', sans-serif;">Measuring Spoons</h3>
+      <h3 style="font-family: 'Dosis', sans-serif;">Convert to Grams</h3>
+      <h4 style="font-family: 'Dosis', sans-serif;">Select Ingredient</h4>
+      <select style="font-family: 'Dosis', sans-serif;" class="form-select form-select-lg mb-3"
+        aria-label=".form-select-lg example" [(ngModel)]="selectedIngredients">
+        <option *ngFor="let ingredient of ingredients" [value]="ingredient">{{ingredient}}</option>
+      </select>
+      <h4 style="font-family: 'Dosis', sans-serif;">Select Measurement</h4>
+      <select style="font-family: 'Dosis', sans-serif;" class="form-select form-select-lg mb-3"
+        aria-label=".form-select-lg example" [(ngModel)]="selectedPortion" (change)="hanglePortionSize()">
+        <option *ngFor="let portion of portions" [value]="portion">{{portion}}</option>
+      </select>
+      <hr>
+      <button class="btn btn-primary" (click)="handleIngredientSelection(); addItem()">Convert</button>
+      <hr>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" [(ngModel)]="additionalIngredient" placeholder="Additionals">
+        <div class="input-group-append">
+          <button class="btn btn-primary" (click)="addAdditionalIngredient()">Add Ingredient</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
