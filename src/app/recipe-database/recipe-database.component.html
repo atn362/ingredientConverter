@@ -16,10 +16,17 @@
 
 
 
-<div *ngIf="fetchedRecipe">
-  <h2>{{ fetchedRecipe.title }}</h2>
-  <p>Ingredients: {{ fetchedRecipe.ingredients }}</p>
-  <p>Method: {{ fetchedRecipe.method }}</p>
+<div class="container mt-4">
+  <div *ngIf="fetchedRecipe" class="card">
+    <div class="card-body">
+      <h2 class="card-title">{{ fetchedRecipe.title }}</h2>
+      <p class="card-text">Ingredients: {{ fetchedRecipe.ingredients }}</p>
+      <p class="card-text">Method: {{ fetchedRecipe.method }}</p>
+    </div>
+  </div>
+
+  <div class="form-inline mt-4">
+    <input [(ngModel)]="recipeId" type="number" class="form-control mr-2" placeholder="Enter Recipe ID">
+    <button (click)="getRecipeById()" class="btn btn-primary">Get Recipe</button>
+  </div>
 </div>
-<input [(ngModel)]="recipeId" type="number" placeholder="Enter Recipe ID">
-<button (click)="getRecipeById()">Get Recipe</button>
