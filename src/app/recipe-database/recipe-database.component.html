@@ -1,4 +1,6 @@
 <div class="container" *ngIf="!fetchedRecipe">
+  {{ createListTitle() }}
+  <h3 *ngIf="listTitle">Your Saved Recipes</h3>
   <div class="row">
     <div class="col">
       <ul class="list-group mt-3" *ngFor="let recipe of recipeList">

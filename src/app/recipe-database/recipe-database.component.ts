@@ -12,6 +12,7 @@ export class RecipeDatabaseComponent {
   public recipeList: Recipe[] = [];
   recipeId: number | undefined;
   fetchedRecipe: Recipe | undefined;
+  listTitle: boolean = false;
 
   constructor(private imageSearchService: ImageSearchService) {
     this.imageSearchService.getRecipeArray();
@@ -21,6 +22,12 @@ export class RecipeDatabaseComponent {
       }
     )
   };
+
+  createListTitle() {
+    if (this.recipeList.length >= 1) {
+      this.listTitle = true;
+    }
+  }
 
   deleteRecipe(recipeId?: number) {
     if (recipeId !== undefined) {
