@@ -62,21 +62,6 @@ export class ImageSearchService {
     });
   }
 
-  // getIngredientById(id: number) {
-
-  //   const url = `http://localhost:3000/api/${id}`;
-
-  //   this.http.get(url).subscribe(
-  //     (response) => {
-  //       console.log('GET Request Successful:', response);
-
-  //     },
-  //     (error) => {
-  //       console.error('Error making GET Request:', error);
-  //     }
-  //   );
-  // }
-
   getIngredientById(recipeId: number): Observable<any> {
     const url = `http://localhost:3000/api/${recipeId}`;
     return this.http.get(url);
@@ -85,17 +70,6 @@ export class ImageSearchService {
   deleteRecipe(recipeId: number) {
     return this.http.delete(this.deleteUrl + recipeId);
   }
-
-
-  // searchImage() {
-  //   this.http.get<any>(`https://api.unsplash.com/photos/random?query=${this.newTitle}&client_id=4zFYJerlFC5LblA06tev6mQ8erJzBWn-WNK0nVnKCaU`)
-  //     .subscribe(response => {
-  //       this.imageURL = response.urls.regular;
-  //     });
-  // }
-
-
-
 
   searchImages(query: string) {
     const url = this.apiUrl + encodeURIComponent(query) + '&num=1';
