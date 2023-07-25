@@ -15,6 +15,7 @@ export enum Ingredients{
   MILK = 'Milk',
   CORNMEAL = 'Corn Meal',
   OIL = 'Oils',
-  MAYO = 'Mayo'
+  MAYO = 'Mayo',
+  BLUEBERRIES = ' Blueberries'
 
 }

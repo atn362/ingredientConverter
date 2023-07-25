@@ -8,7 +8,8 @@ const port = 3000;
 app.use(cors());
 app.use(bodyParser.json());
 
-const mongoUrl = "mongodb://localhost:27017";
+const mongoUrl =
+  "mongodb+srv://atn362:fJKUun9davqypDxv@cluster0.cjh3xnd.mongodb.net/";
 const dbName = "ingredientconverter";
 
 // Connect to MongoDB database
